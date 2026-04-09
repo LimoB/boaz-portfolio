@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================= DARK THEME (DEFAULT) ================= */
+:root {
+  --header-height: 4rem;
+
+  /* HSL Color Variables */
+  --first-hue: 207; /* Changed to Blue hue as per your request */
+  --sat: 90%;
+  --lig: 65%;
+  --second-hue: 219;
+
+  /* Dark Mode Variables (Default) */
+  --first-color: hsl(var(--first-hue), var(--sat), var(--lig));
+  --first-color-alt: hsl(var(--first-hue), var(--sat), 55%);
+  --title-color: hsl(var(--second-hue), 15%, 95%);
+  --text-color: hsl(var(--second-hue), 8%, 75%);
+  --text-color-light: hsl(var(--second-hue), 4%, 55%);
+  --body-color: hsl(var(--second-hue), 48%, 8%);
+  --container-color: hsl(var(--second-hue), 32%, 12%);
+}
+
+/* ================= GLASSY BLUE LIGHT THEME ================= */
+.light-theme {
+  /* Pale Ice Blue background instead of pure white */
+  --body-color: hsl(207, 100%, 97%); 
+  
+  /* Glassy Container: Semi-transparent white */
+  --container-color: rgba(255, 255, 255, 0.6); 
+  
+  /* Deep Blue-Grey for text readability */
+  --title-color: hsl(207, 60%, 15%);
+  --text-color: hsl(207, 25%, 35%);
+  
+  /* Primary blue accent */
+  --first-color: hsl(207, 90%, 50%);
+}
+
+/* ================= BASE STYLES ================= */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: background-color 0.4s, color 0.4s;
+}
+
+/* Glassmorphism Utility */
+.bg-container {
+  background-color: var(--container-color);
+  backdrop-filter: blur(10px); /* This creates the glassy frost effect */
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: background-color 0.4s;
+}
+
+h1, h2, h3 {
+  color: var(--title-color);
+  font-weight: 600;
+}
+
+/* ... keep your custom scrollbar styles here ... */
+
+/* Custom Scrollbar for a Professional Look */
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: hsl(var(--second-hue), 8%, 20%);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--second-hue), 8%, 30%);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--first-color);
+}
