@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
       icon: <FaLinkedin size={24} />, 
       title: 'LinkedIn', 
       data: 'Boaz Limo', 
-      link: 'https://www.linkedin.com/in/boaz-limo-30752b310/', 
+      link: 'https://www.linkedin.com/in/boaz-lim-307bkc/', 
       btn: 'Connect' 
     }
   ];

@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
         {/* Social Icons - Using React Icons (Font Awesome 6) */}
         <div className="flex justify-center gap-x-6 mb-12">
           <a 
-            href="https://www.linkedin.com/in/boaz-limo-30752b310/" 
+            href="https://www.linkedin.com/in/boaz-lim-307bkc/" 
             target="_blank" 
             rel="noreferrer" 
             className="bg-body text-first p-3 rounded-2xl shadow-lg hover:-translate-y-2 transition-transform duration-300 flex items-center justify-center group"

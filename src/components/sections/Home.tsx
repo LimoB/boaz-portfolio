@@ -1,7 +1,7 @@
 import React from 'react';
 import { MousePointer2, Download, ArrowRight } from 'lucide-react';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa6';
-import limoImg from '../../assets/img/limo.png';
+import limoImg from '../../assets/img/boazImage.jpg';
 import myCv from '../../assets/pdf/BoazLimoCv.pdf';
 
 const Home: React.FC = () => {
@@ -60,7 +60,7 @@ const Home: React.FC = () => {
             <div className="flex gap-4">
               {[
                 { icon: <FaGithub size={22} />, link: "https://github.com/LimoB" },
-                { icon: <FaLinkedinIn size={22} />, link: "https://www.linkedin.com/in/boaz-limo-30752b310/" }
+                { icon: <FaLinkedinIn size={22} />, link: "https://www.linkedin.com/in/boaz-lim-307bkc/" }
               ].map((social, i) => (
                 <a 
                   key={i}
@@ -96,7 +96,7 @@ const Home: React.FC = () => {
         {/* Mobile Socials */}
         <div className="lg:hidden flex justify-center gap-10 py-4 opacity-70">
            <a href="https://github.com/LimoB" className="text-title hover:text-first"><FaGithub size={26} /></a>
-           <a href="https://www.linkedin.com/in/boaz-limo-30752b310/" className="text-title hover:text-first"><FaLinkedinIn size={26} /></a>
+           <a href="https://www.linkedin.com/in/boaz-lim-307bkc/" className="text-title hover:text-first"><FaLinkedinIn size={26} /></a>
         </div>
 
         {/* Scroll Down Indicator */}
