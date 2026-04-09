@@ -1,7 +1,7 @@
 import React from 'react';
 import { MousePointer2, Download, ArrowRight } from 'lucide-react';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa6';
-import limoImg from '../../assets/img/boazImage.jpg';
+import limoImg from '../../assets/img/Boaz.jpg';
 import myCv from '../../assets/pdf/BoazLimoCv.pdf';
 
 const Home: React.FC = () => {

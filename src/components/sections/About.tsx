@@ -28,32 +28,33 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-body transition-colors duration-400" id="about">
-      <div className="text-center mb-16">
+    <section className="py-20 px-4 md:py-24 bg-body transition-colors duration-400" id="about">
+      <div className="text-center mb-12 md:mb-16">
         <span className="block text-xs uppercase tracking-[0.2em] text-text-light mb-2">My Intro</span>
         <h2 className="text-2xl md:text-3xl font-bold text-first">About Me</h2>
       </div>
 
-      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center max-w-5xl">
-        {/* Profile Image - Style preserved as requested */}
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-24 items-center max-w-6xl">
+        
+        {/* Profile Image Container */}
         <div className="relative justify-self-center group">
           <div className="absolute -inset-2 bg-gradient-to-tr from-first/20 to-transparent rounded-[2.5rem] blur-sm group-hover:blur-md transition-all duration-500"></div>
           <img 
             src={boazImg} 
             alt="Boaz Kipchirchir" 
-            className="relative w-64 md:w-[350px] rounded-[2rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 object-cover border-4 border-transparent hover:border-white/10"
+            className="relative w-56 sm:w-64 md:w-[320px] lg:w-[380px] rounded-[2rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 object-cover border-4 border-transparent hover:border-first/20"
           />
         </div>
 
         <div className="text-center lg:text-left">
-          {/* Info Boxes */}
-          <div className="grid grid-cols-3 gap-3 md:gap-6 mb-10">
+          {/* Info Boxes - Optimized for Mobile Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 md:mb-10">
             {infoCards.map((card, index) => (
               <div 
                 key={index} 
-                className="bg-container p-4 md:p-6 rounded-2xl text-center border border-transparent hover:border-first/20 shadow-sm hover:shadow-md transition-all duration-400 group relative overflow-hidden"
+                className="bg-container p-5 md:p-6 rounded-2xl text-center border border-transparent hover:border-first/20 shadow-sm hover:shadow-md transition-all duration-400 group relative overflow-hidden backdrop-blur-sm"
               >
-                {/* Visual Image Preview on Hover for the Cert card */}
+                {/* Visual Image Preview on Hover */}
                 {card.preview && (
                   <img 
                     src={card.preview} 
@@ -62,18 +63,18 @@ const About: React.FC = () => {
                   />
                 )}
 
-                <div className="text-first mb-2 flex justify-center group-hover:scale-110 transition-transform relative z-10">
+                <div className="text-first mb-3 flex justify-center group-hover:scale-110 transition-transform relative z-10">
                   {card.icon}
                 </div>
-                <h3 className="text-xs md:text-sm font-bold text-title relative z-10">{card.title}</h3>
-                <span className="text-[9px] md:text-xs text-text-light block mb-1 relative z-10">{card.subtitle}</span>
+                <h3 className="text-sm font-bold text-title relative z-10">{card.title}</h3>
+                <span className="text-xs text-text-light block mb-2 relative z-10">{card.subtitle}</span>
                 
                 {card.link && (
                   <a 
                     href={card.link} 
                     target="_blank" 
                     rel="noreferrer"
-                    className="mt-2 flex items-center justify-center gap-1 text-[10px] font-bold text-first opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10 border-t border-first/10 pt-2"
+                    className="mt-2 inline-flex items-center gap-1 text-[10px] font-bold text-first opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10 border-t border-first/10 pt-2"
                   >
                     View PDF <ExternalLink size={10} />
                   </a>
@@ -82,32 +83,34 @@ const About: React.FC = () => {
             ))}
           </div>
 
-          {/* Description - Updated based on your Resume */}
-          <div className="space-y-4 text-text text-sm md:text-base mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
-            <p>
+          {/* Description Text */}
+          <div className="space-y-4 text-text text-sm md:text-base mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="px-2 md:px-0">
               I am a <span className="text-first font-bold">Software Engineer and Full-Stack Developer</span> focused 
               on building secure, scalable digital solutions. With experience as a 
               <span className="text-title font-semibold"> Software Development Attache at Teach2Give</span>, 
-              I have a proven track record of deploying robust applications to 
+              I have a proven track record of deploying applications to 
               <span className="text-title font-semibold"> Microsoft Azure</span> and collaborating on 
               complex TypeScript projects.
             </p>
-            <p>
-              Currently a <span className="text-first font-bold">Bachelor of Science in ICT finalist</span> at 
+            <p className="px-2 md:px-0">
+              Currently a <span className="text-first font-bold">BSc. ICT finalist</span> at 
               Laikipia University, I specialize in full-stack architectures using 
               <span className="text-title font-semibold"> React, Node.js, and Drizzle ORM</span>. 
-              My expertise extends to <span className="text-title font-semibold">Cybersecurity</span>, 
-              Linux fundamentals, and seamless fintech integrations.
+              My expertise extends to <span className="text-title font-semibold">Cybersecurity</span> and seamless fintech integrations like M-Pesa.
             </p>
           </div>
 
-          <a 
-            href="#contact" 
-            className="group inline-flex items-center gap-2 bg-first text-body px-8 py-4 rounded-2xl font-bold hover:bg-first-alt hover:-translate-y-1 transition-all shadow-lg shadow-first/20"
-          >
-            Contact Me 
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+          {/* Action Button */}
+          <div className="flex justify-center lg:justify-start">
+            <a 
+              href="#contact" 
+              className="group inline-flex items-center gap-2 bg-first text-body px-8 py-4 rounded-2xl font-bold hover:bg-first-alt hover:-translate-y-1 transition-all shadow-lg shadow-first/20"
+            >
+              Contact Me 
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
