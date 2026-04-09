@@ -68,7 +68,7 @@ const Work: React.FC = () => {
       type: 'Live Demo'
     }
   ];
-
+//hello
   const filteredProjects = filter === 'all' 
     ? projects 
     : projects.filter(project => project.category === filter);
